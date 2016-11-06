@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/id_stickynavlayout_indicator"
+              android:layout_width="match_parent"
+              android:layout_height="40dp"
+                android:background="@android:color/white"
+             >
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:padding="@dimen/margin_left_6_dp">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_sj"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/shangjia"/>-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginLeft="@dimen/margin_left_6_dp"-->
+            <!--android:layout_toRightOf="@id/iv_sj"-->
+            <!--android:text="@string/essence_business"-->
+            <!--android:textColor="@android:color/white"-->
+            <!--android:textSize="@dimen/second_tv_size"/>-->
+
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"/>-->
+    <!--</RelativeLayout>-->
+
+    <!--<View-->
+        <!--android:layout_width="@dimen/line_dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@color/chabai"></View>-->
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:padding="@dimen/margin_left_6_dp">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_esc"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/ershouche"/>-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginLeft="@dimen/margin_left_6_dp"-->
+            <!--android:layout_toRightOf="@id/iv_esc"-->
+            <!--android:text="@string/essence_old_car"-->
+            <!--android:textColor="@android:color/white"-->
+            <!--android:textSize="@dimen/second_tv_size"/>-->
+
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"/>-->
+    <!--</RelativeLayout>-->
+    <View
+        android:layout_width="@dimen/margin_left_12_dp"
+        android:background="@color/check_bg"
+        android:layout_alignParentBottom="true"
+        android:layout_height="13dp"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:background="@drawable/essence_check_true_bg"
+        android:paddingLeft="@dimen/margin_left_12_dp"
+        android:layout_alignParentBottom="true"
+        android:text="小主评论"
+        android:id="@+id/textView2"/>
+    <Button
+        android:id="@+id/bt_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/tv_black_30"
+        android:background="@null"
+        android:text="更多"/>
+
+</RelativeLayout>

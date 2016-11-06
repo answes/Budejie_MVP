@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_content"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bigshark.budejie_mvp.pro.essence.view.views.EssenceInsuranceNextActivity">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_left_12_dp"
+    android:layout_marginRight="@dimen/margin_left_12_dp"
+   >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="保险公司需要您补充以下信息"
+        android:textColor="@color/line_bg"
+        android:layout_centerVertical="true"
+        android:id="@+id/textView"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:textColor="@color/check_bg"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:inputType="number"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/help_icon"
+        android:text="如何填写"
+        />
+</RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left_12_dp"
+        android:text="车辆识别代号"/>
+    <EditText
+        android:id="@+id/et_catId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_left_12_dp"
+        android:background="@drawable/essence_white_bg"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left_12_dp"
+        android:text="发动机号"/>
+
+    <EditText
+        android:id="@+id/et_engineId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_margin="@dimen/margin_left_12_dp"
+        android:background="@drawable/essence_white_bg"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left_12_dp"
+        android:text="初登日期"/>
+
+    <EditText
+        android:id="@+id/et_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_margin="@dimen/margin_left_12_dp"
+        android:background="@drawable/essence_white_bg"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left_12_dp"
+        android:text="品牌型号（行驶证中的品牌型号）"/>
+
+    <EditText
+        android:id="@+id/et_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_left_12_dp"
+        android:background="@drawable/essence_white_bg"/>
+
+    <Button
+        android:id="@+id/bt_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/essence_check_true_bg"
+        android:text="下一步"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/item_essence_name_size"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/margin_left_12_dp"
+        android:textColor="@color/main_bottom_text_normal"
+        android:text="身边没有行驶证，不要紧，点击预定"/>
+</LinearLayout>

@@ -9,13 +9,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bigshark.budejie_mvp.pro.attention.view.AttentionFragment;
+import com.bigshark.budejie_mvp.pro.business.view.BusinessFragment;
 import com.bigshark.budejie_mvp.pro.essence.view.EssenceFragment;
-import com.bigshark.budejie_mvp.pro.mine.MineFragment;
-import com.bigshark.budejie_mvp.pro.newpost.NewPostFragment;
-import com.bigshark.budejie_mvp.pro.publish.view.PublishFragment;
+import com.bigshark.budejie_mvp.pro.mine.view.MineFragment;
+import com.bigshark.budejie_mvp.pro.activity.ActivityListFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,17 +39,13 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
         tabItemList.add(new TabItem(R.drawable.main_bottom_essence_normal
                 , R.drawable.main_bottom_essence_press, R.string.main_essence_text, EssenceFragment.class));
 
-        //添加新帖Tab
-        tabItemList.add(new TabItem(R.drawable.main_bottom_newpost_normal
-                , R.drawable.main_bottom_newpost_press, R.string.main_newpost_text, NewPostFragment.class));
-
-        //添加发布Tab
-        tabItemList.add(new TabItem(R.drawable.main_bottom_public_normal
-                , R.drawable.main_bottom_public_press, 0, PublishFragment.class));
-
-        //添加关注Tab
+        //添加商家Tab
         tabItemList.add(new TabItem(R.drawable.main_bottom_attention_normal
-                , R.drawable.main_bottom_attention_press, R.string.main_attention_text, AttentionFragment.class));
+                , R.drawable.main_bottom_attention_press, R.string.main_newpost_text, BusinessFragment.class));
+
+        //添加活动Tab
+        tabItemList.add(new TabItem(R.drawable.main_bottom_newpost_normal
+                , R.drawable.main_bottom_newpost_press, R.string.main_attention_text, ActivityListFragment.class));
 
         //添加我的Tab
         tabItemList.add(new TabItem(R.drawable.main_bottom_mine_normal
@@ -92,7 +86,6 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
 
     @Override
     public void onTabChanged(String tabId) {
-        Toast.makeText(this, tabId, Toast.LENGTH_LONG).show();
 
         for (int i = 0; i < tabItemList.size(); i++) {
             TabItem tabItem = tabItemList.get(i);
@@ -176,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
             }
             if (textView != null && title != 0) {
                 if (isChecked) {
-                    textView.setTextColor(getResources().getColor(R.color.main_bottom_text_select));
+                    textView.setTextColor(getResources().getColor(R.color.toolbar_bg));
                 } else {
                     textView.setTextColor(getResources().getColor(R.color.main_bottom_text_normal));
                 }

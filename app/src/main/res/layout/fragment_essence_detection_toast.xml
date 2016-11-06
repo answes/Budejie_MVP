@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+              android:background="@drawable/essence_detection_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_left_12_dp"
+        android:text="汽车检测"
+        android:textSize="22sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left_12_dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_left_12_dp"
+            android:text="汽车类型:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_left_12_dp"
+            android:text="大车 / 小车"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:text="检测须知:"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="@dimen/margin_left_6_dp"
+        android:text="  所需资料：\n  1．行驶证原件\n  2．交强险副本\n  3．身份证复印件\n  4．车辆\n"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/bt_agree"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="我已阅读"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/holo_blue_dark"/>
+    <Button
+        android:id="@+id/bt_cancel"
+        android:layout_width="120dp"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content"
+        android:text="取消"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/holo_blue_dark"/>
+
+
+</LinearLayout>

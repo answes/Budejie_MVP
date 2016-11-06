@@ -1,0 +1,7 @@
+<resources>
+    <string name="register_phone_number">请输入手机号码</string>
+    <string name="register_password">请设置密码</string>
+    <string name="get_yan">获取验证码</string>
+    <string name="register_register">注册</string>
+    <string name="register_yan">验证码</string>
+</resources>

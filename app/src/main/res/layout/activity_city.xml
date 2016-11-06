@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+                android:id="@+id/content"
+    android:background="@color/win_bg" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/win_bg"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:text="当前城市"
+             />
+
+        <TextView
+            android:id="@+id/tv_defaultCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/white"
+            android:paddingBottom="10dp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:paddingTop="10dp"
+            android:text="全部"
+            android:textColor="@color/main_bottom_text_select" />
+
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/white"
+            android:paddingBottom="10dp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:paddingTop="10dp"
+            android:text="南宁"
+            android:textColor="@color/main_bottom_text_select" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/chabai" />
+
+        <ListView
+            android:id="@+id/city_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/win_bg"
+            android:divider="@color/main_bottom_text_normal"
+            android:dividerHeight="1dp" >
+        </ListView>
+    </LinearLayout>
+
+    <com.bigshark.budejie_mvp.pro.custom_view.MyLetterListView
+        android:id="@+id/cityLetterListView"
+        android:layout_width="30dip"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
+
+        android:layout_marginTop="60dp"
+        android:background="#40000000" />
+
+</RelativeLayout>

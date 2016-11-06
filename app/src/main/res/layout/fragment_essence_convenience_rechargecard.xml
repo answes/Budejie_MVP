@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:id="@+id/ll_content"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_dp"
+        android:background="@color/line_bg"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_left_5_dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/warning"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left_6_dp"
+            android:text="目前支持中石化，中石油充值"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/essence_white_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:text="持卡姓名"
+                android:textColor="@android:color/black"/>
+
+            <EditText
+                android:id="@+id/et_cardName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_l_8_dp"
+                android:background="@android:color/white"
+                android:layout_gravity="center_vertical"
+                android:singleLine="true"
+                android:hint="请输入持卡人姓名"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_dp"
+            android:background="@color/check_false_bg"/>
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_city1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="油卡卡号"
+                android:textColor="@android:color/black"/>
+
+            <ImageView
+                android:id="@+id/iv_help"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:padding="@dimen/margin_l_8_dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_left_12_dp"
+                android:src="@drawable/help_icon"/>
+
+            <EditText
+                android:id="@+id/et_cardNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numeric="integer"
+                android:layout_marginLeft="@dimen/margin_left_5_dp"
+
+                android:singleLine="true"
+                android:hint="请输入完整的油卡卡号"
+                android:layout_centerVertical="true"
+                android:textColor="@color/check_bg"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tv_city1"
+                android:layout_toEndOf="@+id/tv_city1"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_dp"
+            android:background="@color/check_false_bg"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="充值金额"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/black"/>
+
+            <EditText
+                android:id="@+id/et_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@android:color/white"
+                android:layout_marginLeft="@dimen/margin_l_8_dp"
+                android:singleLine="true"
+                android:inputType="number"
+                android:hint="请输入您要充值的金额"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_recharge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/item_essence_name_size"
+        android:text="立即充值"
+        android:background="@drawable/essence_check_true_bg"/>
+
+    <TextView
+        android:background="@color/check_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:padding="@dimen/margin_l_8_dp"
+        android:text="充值记录"/>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</LinearLayout>

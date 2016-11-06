@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:background="@android:color/white"
+              android:paddingRight="@dimen/margin_left_12_dp"
+              android:paddingLeft="@dimen/margin_left_12_dp"
+              android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/niv_heand"
+            android:layout_marginTop="@dimen/margin_l_8_dp"
+            android:layout_width="30dp"
+            android:scaleType="fitXY"
+            android:layout_height="30dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="加拉贝斯"
+            android:layout_toRightOf="@id/niv_heand"
+            android:layout_alignTop="@id/niv_heand"
+            android:layout_marginLeft="@dimen/margin_left_12_dp"
+            android:textColor="@color/tv_black_90"
+            android:id="@+id/tv_username"/>
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:layout_toRightOf="@id/niv_heand"
+            android:layout_below="@id/tv_username"
+            android:layout_width="wrap_content"
+            android:id="@+id/mrb_comment"
+            android:layout_marginTop="@dimen/margin_l_8_dp"
+            android:layout_marginLeft="@dimen/margin_left_12_dp"
+            android:layout_height="wrap_content"
+            style="?android:attr/ratingBarStyleSmall"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2016.11.11"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/tv_black_30"
+            android:layout_alignTop="@id/niv_heand"
+
+            android:layout_marginLeft="@dimen/margin_left_12_dp"
+            android:id="@+id/tv_date"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_comment"
+        android:layout_width="match_parent"
+        android:text="这个是评价，我觉得挺好的，这里的服务"
+        android:paddingLeft="42dp"
+        android:paddingTop="@dimen/margin_l_8_dp"
+        android:paddingRight="@dimen/margin_l_8_dp"
+        android:paddingBottom="@dimen/margin_l_8_dp"
+        android:textColor="@color/tv_black_50"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

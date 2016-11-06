@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_content"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/win_bg"
+              android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_dp"
+        android:background="@color/line_bg"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_left_5_dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/warning"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left_6_dp"
+            android:text="目前只支持9座以下的小型车查询"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/essence_white_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:text="车牌号码"
+                android:textColor="@android:color/black"/>
+
+            <LinearLayout
+                android:id="@+id/ll_catNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/margin_left_5_dp"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/essence_cat_city_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_catCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="桂"
+                    android:textColor="@color/check_bg"/>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/essence_cat_city"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/line_dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/margin_l_8_dp"
+                android:layout_marginTop="@dimen/margin_l_8_dp"
+                android:background="@color/check_bg"/>
+
+            <EditText
+                android:id="@+id/et_catNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:digits="0123456789zxcvbnmasdfghjklpoiuytrewq"
+                android:background="@android:color/white"
+                android:layout_gravity="center_vertical"
+                android:singleLine="true"
+                android:hint="输入完整的车牌号码"/>
+
+        </LinearLayout>
+
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_dp"
+        android:background="@color/check_false_bg"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="查询城市"
+                android:textColor="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/tv_cityName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_l_8_dp"
+                android:layout_toRightOf="@id/tv_city"
+                android:text="南宁市"
+                android:textColor="@color/check_bg"
+                />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_left_12_dp"
+                android:src="@drawable/more_icon"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_dp"
+            android:background="@color/check_false_bg"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_city1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="发动机号"
+                android:textColor="@android:color/black"/>
+
+            <ImageView
+                android:id="@+id/iv_help"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:padding="@dimen/margin_l_8_dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_left_12_dp"
+                android:src="@drawable/help_icon"/>
+
+            <EditText
+                android:id="@+id/et_launchNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numeric="integer"
+                android:layout_marginLeft="@dimen/margin_left_5_dp"
+                android:background="@android:color/white"
+                android:singleLine="true"
+                android:hint="请输入后6位发动机号"
+                android:layout_centerVertical="true"
+                android:textColor="@color/check_bg"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tv_city1"
+                android:layout_toEndOf="@+id/tv_city1"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_quary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/item_essence_name_size"
+        android:text="立即查询"
+        android:background="@drawable/essence_check_true_bg"/>
+
+</LinearLayout>

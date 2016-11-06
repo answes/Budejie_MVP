@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:background="@color/white"
+              android:layout_height="wrap_content">
+
+    <com.allen.supertextviewlibrary.SuperTextView
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:id="@+id/stv_top"
+        app:sLeftIconRes="@drawable/help_icon"
+        app:sLeftTextString="店铺名称"
+        app:sRightTextString="正在交易"
+        app:sRightTextColor="@color/orangered"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="@dimen/margin_l_8_dp"
+        android:background="@color/win_bg"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/niv_logo"
+            android:layout_width="50dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/weixiu"
+            android:layout_height="50dp"/>
+
+        <com.allen.supertextviewlibrary.SuperTextView
+            android:id="@+id/stv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@id/niv_logo"
+            app:sBackgroundColor="@color/win_bg"
+            app:sLineShow="none"
+            app:sRightTextColor="@color/tv_black_50"
+            app:sLeftTextString="商品名称"
+            app:sRightTextString="￥23.00"
+           />
+        <TextView
+            android:id="@+id/tv_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/niv_logo"
+            android:layout_marginLeft="16dp"
+             android:layout_below="@id/stv_name"
+            android:textColor="@color/tv_black_50"
+            android:layout_marginTop="@dimen/margin_left_6_dp"
+            android:text="请于2016年12点前到店交易"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_count"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="right"
+        android:padding="@dimen/margin_l_8_dp"
+        android:text="共23.00元"/>
+
+</LinearLayout>

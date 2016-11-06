@@ -37,7 +37,8 @@ public class MineNavigationBuilder extends NavigationBuilderAdapter {
     @Override
     public void createAndBind(ViewGroup parent) {
         super.createAndBind(parent);
-        setImageViewStyle(R.id.iv_model, modelRes, this.modelOnClickListener);
+        setTitleTextView(R.id.iv_title, getTitle());
+        setImageViewStyle(R.id.iv_left, getLeftIconRes(), getLeftIconOnClickListener());
         setImageViewStyle(R.id.iv_setting, getRightIconRes(), getRightIconOnClickListener());
     }
 }

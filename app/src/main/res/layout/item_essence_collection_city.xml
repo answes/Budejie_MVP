@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/alpha"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="8dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="8dp"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alpha"
+        android:background="@color/win_bg"
+        android:paddingBottom="8dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="10dp"
+        android:paddingTop="8dp"
+        android:singleLine="true"
+        android:text="name"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="#212121" />
+    <!-- android:layout_toRightOf="@id/image_view" -->
+
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/name"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_below="@id/name"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="number"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="#AAAAAA"
+        android:visibility="gone" />
+
+</RelativeLayout>

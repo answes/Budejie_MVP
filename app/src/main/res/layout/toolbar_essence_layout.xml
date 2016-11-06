@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="50dp"
     android:orientation="horizontal"
-    android:background="@android:color/white">
+    android:background="@color/toolbar_bg">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -15,7 +15,6 @@
             android:id="@+id/iv_left"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/main_essence_btn_selector"
             android:layout_marginLeft="@dimen/margin_left_12_dp"/>
     </LinearLayout>
 
@@ -25,11 +24,12 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:gravity="center">
-        <ImageView
+        <TextView
             android:id="@+id/iv_title"
-            android:layout_width="128dp"
-            android:layout_height="22dp"
-            android:background="@drawable/main_essence_title"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"/>
     </LinearLayout>
 
     <LinearLayout

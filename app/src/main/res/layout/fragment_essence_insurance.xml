@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_content"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:weightSum="1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/chexian"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_left_12_dp"
+                android:layout_marginTop="20dp"
+                android:text="车牌号"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_left_12_dp"
+                android:background="@drawable/essence_white_bg"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_catCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/check_bg"
+                    android:textColor="@android:color/white"
+                    android:text=" 桂A "/>
+
+                <EditText
+                    android:id="@+id/et_catNum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_left_6_dp"
+                    android:background="@android:color/transparent"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_left_12_dp"
+                android:text="车主姓名"/>
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/essence_white_bg"
+                android:layout_margin="@dimen/margin_left_12_dp"
+               />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_left_12_dp"
+                android:text="身份证号"/>
+
+            <EditText
+                android:id="@+id/et_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_left_12_dp"
+                android:background="@drawable/essence_white_bg"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_left_12_dp"
+                android:text="手机号码"/>
+
+            <EditText
+                android:id="@+id/et_phoneNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_left_12_dp"
+                android:background="@drawable/essence_white_bg"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_left_12_dp"
+                android:text="获取验证码"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_left_12_dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_dynamicCode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_left_12_dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/essence_white_bg"/>
+
+                <Button
+                    android:id="@+id/bt_getDynamicCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="@dimen/margin_left_12_dp"
+                    android:background="@drawable/essence_check_true_bg"
+                    android:text="获取验证码"
+                    android:textColor="@android:color/white"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_left_12_dp"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/id_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是否一年内过户车"/>
+
+                <ImageView
+                    android:id="@+id/iv_help"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/help_icon"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bt_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/essence_check_true_bg"
+                android:text="下一步"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/item_essence_name_size"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_left_12_dp"
+                android:text="*您的信息将被严格保密"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_left_12_dp"
+                android:layout_marginTop="@dimen/margin_left_12_dp"
+                android:text="懒得输出入，您还可以"
+                android:textSize="12sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_callPhone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/essence_check_true_bg"
+                    android:text="电话报价"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/item_essence_name_size"/>
+
+                <Button
+                    android:id="@+id/bt_takePhtoto"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/essence_check_true_bg"
+                    android:text="拍照报价"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/item_essence_name_size"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="10dp"
+              android:background="@android:color/white"
+              android:orientation="vertical">
+    <com.allen.supertextviewlibrary.SuperTextView
+        android:id="@+id/stv_price"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:sLeftTextString="维修价格"
+        app:sRightTextString="￥20元"
+        app:sRightTextColor="@color/orangered"
+        app:sLineShow="none"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_pay"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/margin_left_12_dp"
+            android:src="@drawable/check_true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left_12_dp"
+            android:text="线上支付（优惠）"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_left_6_dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_reservation"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/margin_left_12_dp"
+            android:src="@drawable/check_false"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left_12_dp"
+            android:text="到店支付（无优惠）"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_left_12_dp"
+        android:gravity="center_horizontal"
+        android:paddingBottom="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/essence_check_true_bg"
+            android:text="支付"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/bt_reservation"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textColor="@android:color/white"
+            android:background="@color/check_false_bg"
+            android:layout_marginLeft="@dimen/margin_left_5_dp"
+            android:text="预约"/>
+    </LinearLayout>
+
+</LinearLayout>

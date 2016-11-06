@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/win_bg">
+
+    <com.allen.supertextviewlibrary.SuperTextView
+        android:id="@+id/stv_password"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="50dp"
+        app:sLeftTextString="修改密码"
+        app:sRightIconRes="@drawable/more_icon"
+        app:sLineShow="bottom"
+        />
+
+    <com.allen.supertextviewlibrary.SuperTextView
+        android:id="@+id/stv_huancun"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:sLeftTextString="清除缓存"
+        app:sRightTextString="20k"
+        app:sRightTextMarginRight="20dp"
+        app:sLineShow="bottom"
+        />
+
+    <com.allen.supertextviewlibrary.SuperTextView
+        android:id="@+id/stv_about"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:sLeftTextString="关于我们"
+        app:sRightIconRes="@drawable/more_icon"
+        app:sLineShow="bottom"
+        />
+    <com.allen.supertextviewlibrary.SuperTextView
+        android:id="@+id/stv_phone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:sLeftTextString="客服热线"
+        app:sRightTextString="18376757141"
+        app:sRightTextColor="@color/toolbar_bg"
+        app:sRightTextSize="18sp"
+        />
+
+    <Button
+        android:id="@+id/bt_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/item_essence_name_size"
+        android:text="注销登陆"
+        android:background="@drawable/essence_check_true_bg"/>
+
+</LinearLayout>
