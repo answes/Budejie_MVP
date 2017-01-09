@@ -12,11 +12,11 @@ public class HttpTask extends AsyncTask<String, Void, String> {
 
     private String url;
     private IRequestParam requestParam;
-    private HttpUtils.OnHttpResultListener onHttpResultListener;
+    private MyHttpUtils.OnHttpResultListener onHttpResultListener;
     private IHttpCommand httpCommand;
 
     public HttpTask(String url, IRequestParam requestParam, IHttpCommand httpCommand,
-                    HttpUtils.OnHttpResultListener onHttpResultListener) {
+                    MyHttpUtils.OnHttpResultListener onHttpResultListener) {
         this.url = url;
         this.requestParam = requestParam;
         this.httpCommand = httpCommand;

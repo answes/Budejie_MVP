@@ -16,6 +16,7 @@ import com.bigshark.budejie_mvp.bean.CommentViewHolder;
 import com.bigshark.budejie_mvp.bean.Comments;
 import com.bigshark.budejie_mvp.mvp.presenter.impl.MvpBasePresenter;
 import com.bigshark.budejie_mvp.pro.base.view.BaseActivity;
+import com.bigshark.budejie_mvp.pro.essence.view.navigation.EssenceActivityNavigationBuilder;
 import com.bigshark.budejie_mvp.pro.essence.view.navigation.EssenceNavigationBuilder;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
@@ -91,7 +92,7 @@ public class CommentMoreActivity extends BaseActivity implements RecyclerArrayAd
 
     private void initToolbar() {
         LinearLayout contentLayout = (LinearLayout) findViewById(R.id.activity_comment_more);
-        EssenceNavigationBuilder bar = new EssenceNavigationBuilder(this);
+        EssenceActivityNavigationBuilder bar = new EssenceActivityNavigationBuilder(this);
         bar.setTitle("客户点评").setLeftIcon(R.drawable.left_back)
                 .setLeftIconOnClickListener(new View.OnClickListener() {
                     @Override

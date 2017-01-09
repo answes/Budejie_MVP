@@ -28,7 +28,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_left_6_dp"
-            android:text="目前只支持9座以下的小型车查询"/>
+            android:text="目前只支持9座以下的小型车查询"
+            android:id="@+id/textView3"/>
     </LinearLayout>
 
     <LinearLayout
@@ -40,7 +41,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="40dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -50,58 +51,56 @@
                 android:text="车牌号码"
                 android:textColor="@android:color/black"/>
 
-            <LinearLayout
-                android:id="@+id/ll_catNum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_margin="@dimen/margin_left_5_dp"
-                android:layout_marginLeft="12dp"
-                android:background="@drawable/essence_cat_city_bg"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_catCity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="桂"
-                    android:textColor="@color/check_bg"/>
-
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="18dp"
-                    android:src="@drawable/essence_cat_city"/>
-            </LinearLayout>
-
-            <View
-                android:layout_width="@dimen/line_dp"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="@dimen/margin_l_8_dp"
-                android:layout_marginTop="@dimen/margin_l_8_dp"
-                android:background="@color/check_bg"/>
-
             <EditText
                 android:id="@+id/et_catNum"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:digits="0123456789zxcvbnmasdfghjklpoiuytrewq"
-                android:background="@android:color/white"
+                android:background="@android:color/transparent"
                 android:layout_gravity="center_vertical"
                 android:singleLine="true"
-                android:hint="输入完整的车牌号码"/>
+                android:textColor="@color/check_bg"
+                android:paddingLeft="6dp"
+                android:textColorHint="@color/chabai"
+                android:hint="如 京P88881"/>
 
         </LinearLayout>
 
         <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/line_dp"
-        android:background="@color/check_false_bg"/>
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_dp"
+            android:background="@color/check_false_bg"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:text="车  架  号"
+                android:textColor="@android:color/black"/>
+            <EditText
+                android:id="@+id/et_carCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="@color/check_bg"
+                android:background="@android:color/transparent"
+                android:layout_gravity="center_vertical"
+                android:singleLine="true"
+                android:paddingLeft="6dp"
+                android:textColorHint="@color/chabai"
+                android:hint="请输入车架号后6位"/>
+
+        </LinearLayout>
+
 
         <RelativeLayout
             android:id="@+id/rl_city"
             android:layout_width="match_parent"
+            android:visibility="gone"
             android:layout_height="wrap_content">
 
             <TextView
@@ -161,15 +160,17 @@
 
             <EditText
                 android:id="@+id/et_launchNum"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:numeric="integer"
+                android:layout_marginRight="43dp"
                 android:layout_marginLeft="@dimen/margin_left_5_dp"
-                android:background="@android:color/white"
+                android:background="@android:color/transparent"
                 android:singleLine="true"
+                android:textColorHint="@color/chabai"
                 android:hint="请输入后6位发动机号"
                 android:layout_centerVertical="true"
                 android:textColor="@color/check_bg"
+                android:maxLength="7"
                 android:layout_alignParentTop="true"
                 android:layout_toRightOf="@+id/tv_city1"
                 android:layout_toEndOf="@+id/tv_city1"/>

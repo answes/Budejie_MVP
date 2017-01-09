@@ -14,7 +14,9 @@ import com.android.volley.toolbox.Volley;
 import com.andview.refreshview.recyclerview.BaseRecyclerAdapter;
 import com.bigshark.budejie_mvp.R;
 import com.bigshark.budejie_mvp.bean.EssenceTestData;
+import com.bigshark.budejie_mvp.pro.custom_view.XCRoundRectImageView;
 import com.bigshark.budejie_mvp.utils.BitmapCache;
+import com.bigshark.budejie_mvp.utils.VolleyUtils;
 
 import java.util.List;
 
@@ -58,7 +60,7 @@ public class EssenceListAdapter extends BaseRecyclerAdapter<EssenceListAdapter.A
     public void onBindViewHolder(AdapterViewHolder holder, int position, boolean isItem) {
 
         EssenceTestData postList = this.list.get(position);
-        loadImage(holder.iv_header, postList.getUrl());
+        VolleyUtils.loadImage(context,holder.iv_header, postList.getUrl());
         holder.tv_title.setText(postList.getTitle());
         holder.tv_secend_title.setText(postList.getSencendTitle());
         holder.tv_distance.setText(postList.getDistance());
@@ -71,14 +73,14 @@ public class EssenceListAdapter extends BaseRecyclerAdapter<EssenceListAdapter.A
     }
 
     //Volley框架
-    private void loadImage(NetworkImageView imageView, String url) {
-        RequestQueue queue = Volley.newRequestQueue(context);
-        ImageLoader imageLoader = new ImageLoader(queue, new BitmapCache());
-        imageView.setImageUrl(url, imageLoader);
-    }
+//    private void loadImage(NetworkImageView imageView, String url) {
+//        RequestQueue queue = Volley.newRequestQueue(context);
+//        ImageLoader imageLoader = new ImageLoader(queue, new BitmapCache());
+//        imageView.setImageUrl(url, imageLoader);
+//    }
 
     class AdapterViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener{
-        public NetworkImageView iv_header;
+        public XCRoundRectImageView iv_header;
         public TextView tv_title;
         public TextView tv_secend_title;
         private TextView tv_distance;
@@ -91,7 +93,7 @@ public class EssenceListAdapter extends BaseRecyclerAdapter<EssenceListAdapter.A
             super(itemView);
             this.itemOnClickListener = itemOnClickListener;
             if (isItem) {
-                iv_header = (NetworkImageView) itemView
+                iv_header = (XCRoundRectImageView) itemView
                         .findViewById(R.id.iv_header);
                 tv_title = (TextView) itemView
                         .findViewById(R.id.tv_title);

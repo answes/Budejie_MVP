@@ -13,6 +13,7 @@ import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.Volley;
 import com.bigshark.budejie_mvp.R;
 import com.bigshark.budejie_mvp.bean.EssenceTestData;
+import com.bigshark.budejie_mvp.pro.custom_view.XCRoundRectImageView;
 import com.bigshark.budejie_mvp.utils.BitmapCache;
 
 import java.util.List;
@@ -56,7 +57,7 @@ public class BusinessListAdapter extends BaseAdapter {
         if(view == null){
             view = LayoutInflater.from(context).inflate(R.layout.item_fragment_essence_list, viewGroup,false);
             viewHolder = new ViewHolder();
-            viewHolder.iv_header = (NetworkImageView) view.findViewById(R.id.iv_header);
+            viewHolder.iv_header = (XCRoundRectImageView) view.findViewById(R.id.iv_header);
             viewHolder.tv_title = (TextView) view.findViewById(R.id.tv_title);
             viewHolder.tv_distance = (TextView) view.findViewById(R.id.tv_distance);
             viewHolder.tv_secend_title = (TextView)view.findViewById(R.id.tv_secend_title);
@@ -75,7 +76,7 @@ public class BusinessListAdapter extends BaseAdapter {
     }
 
     class ViewHolder {
-         NetworkImageView iv_header;
+        XCRoundRectImageView iv_header;
          TextView tv_title;
          TextView tv_secend_title;
          TextView tv_distance;

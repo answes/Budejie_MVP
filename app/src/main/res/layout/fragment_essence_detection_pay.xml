@@ -5,12 +5,13 @@
               android:layout_height="wrap_content"
               android:layout_marginTop="10dp"
               android:background="@android:color/white"
+              android:paddingBottom="20dp"
               android:orientation="vertical">
     <com.allen.supertextviewlibrary.SuperTextView
         android:id="@+id/stv_price"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        app:sLeftTextString="维修价格"
+        app:sLeftTextString="维修检测价格"
         app:sRightTextString="￥20元"
         app:sRightTextColor="@color/orangered"
         app:sLineShow="none"
@@ -21,6 +22,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:layout_marginTop="10dp"
+        android:visibility="gone"
         android:orientation="horizontal">
 
         <ImageView
@@ -49,13 +51,13 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="@dimen/margin_left_12_dp"
-            android:src="@drawable/check_false"/>
+            android:src="@drawable/check_true"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_left_12_dp"
-            android:text="到店支付（无优惠）"/>
+            android:text="在线预约"/>
 
     </LinearLayout>
 
@@ -73,15 +75,17 @@
             android:layout_height="30dp"
             android:background="@drawable/essence_check_true_bg"
             android:text="支付"
+            android:visibility="gone"
             android:textColor="@android:color/white"/>
 
         <Button
             android:id="@+id/bt_reservation"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="35dp"
             android:textColor="@android:color/white"
-            android:background="@color/check_false_bg"
+            android:background="@color/check_bg"
             android:layout_marginLeft="@dimen/margin_left_5_dp"
+            android:padding="3dp"
             android:text="预约"/>
     </LinearLayout>
 

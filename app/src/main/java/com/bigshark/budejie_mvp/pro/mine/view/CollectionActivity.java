@@ -69,7 +69,8 @@ public class CollectionActivity extends BaseActivity {
         adapter.setItemOnClickListener(new EssenceListAdapter.ItemOnClickListener() {
             @Override
             public void onItemClick(View view, int postion) {
-                EssenceBusinessActivity.openEssenceBusinessActivity(CollectionActivity.this,datas.get(postion).getTitle());
+                EssenceBusinessActivity.openEssenceBusinessActivity(CollectionActivity.this,
+                        datas.get(postion).getTitle(),datas.get(postion).getUrl(),datas.get(postion).getSencendTitle(),datas.get(postion).getDistance());
             }
         });
 
@@ -87,15 +88,51 @@ public class CollectionActivity extends BaseActivity {
         });
     }
 
+
+    private String[] url = new String[]{
+            "http://img1.imgtn.bdimg.com/it/u=1173275864,2683412003&fm=21&gp=0.jpg",
+            "http://img4.imgtn.bdimg.com/it/u=1724741641,406307535&fm=21&gp=0.jpg",
+            "http://img1.imgtn.bdimg.com/it/u=1173275864,2683412003&fm=21&gp=0.jpg",
+            "http://img4.imgtn.bdimg.com/it/u=540367546,4162194838&fm=21&gp=0.jpg",
+            "http://img1.imgtn.bdimg.com/it/u=2065192343,110408558&fm=21&gp=0.jpg",
+            "http://img5.imgtn.bdimg.com/it/u=2802644689,2577269072&fm=21&gp=0.jpg",
+            "http://img1.imgtn.bdimg.com/it/u=779686150,349371177&fm=21&gp=0.jpg",
+            "http://img5.imgtn.bdimg.com/it/u=73147951,3832929034&fm=21&gp=0.jpg",
+            "http://img5.imgtn.bdimg.com/it/u=2005883992,1084071493&fm=21&gp=0.jpg",
+            "http://img0.imgtn.bdimg.com/it/u=1783819006,367489004&fm=21&gp=0.jpg"
+    };
+
+    private String[] name = new String[]{
+            "横县4s店","老毛头","大白菜","天地联盟","等等等","时尚汽车","安全出行","金百车行","荣耀车行","百天汽车"
+    };
+
+    private String[] sencendName = new String[]{
+            "公司承接汽车美容、汽车改装、汽车贴膜、汽车维修等",
+            "据您个人需求，针对您爱车的本身特点，以我们专业的视野",
+            "汽车装饰中心（地胶、脚垫、真皮、倒车雷达、防盗器）、汽车改装中心",
+            "汽车快修保养中心（轮胎机油、钣金喷漆、快修保养等）、保险业务代理等",
+            "立足为您的爱车保驾护航",
+            "针对您爱车的本身特点，以我们专业的视野",
+            "轮胎机油、钣金喷漆、快修保养等",
+            "保险业务代理等",
+            "汽车快修保养中心",
+            "汽车改装中心"
+    };
+
+    private String[] distances = new String[]{
+            "0.5km","1km","20km","0.2km","3km","6km","8km","120km","22km","0.7km"
+    };
+
+
     private void loadData(final boolean isDownRefresh) {
 
 
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 10; i++) {
             EssenceTestData data = new EssenceTestData();
-            data.setUrl("http://s2.sinaimg.cn/mw690/001nioVRgy6NKZmYYrn71&690");
-            data.setTitle("店铺测试");
-            data.setSencendTitle("店铺简介");
-            data.setDistance("200km");
+            data.setUrl(url[i]);
+            data.setTitle(name[i]);
+            data.setSencendTitle(sencendName[i]);
+            data.setDistance(distances[i]);
             datas.add(data);
         }
         if (isDownRefresh) {

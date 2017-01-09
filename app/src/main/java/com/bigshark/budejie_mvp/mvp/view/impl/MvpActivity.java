@@ -2,6 +2,7 @@ package com.bigshark.budejie_mvp.mvp.view.impl;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.WindowManager;
 
 import com.bigshark.budejie_mvp.mvp.presenter.impl.MvpBasePresenter;
 import com.bigshark.budejie_mvp.mvp.view.IMvpView;
@@ -20,6 +21,11 @@ public abstract class MvpActivity<P extends MvpBasePresenter> extends AppCompatA
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // 不让软键盘自动弹出来
+        getWindow().setSoftInputMode(
+                WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
+                        | WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         //presenter 关联 view
         presenter = bindPresenter();
         if (presenter != null) {

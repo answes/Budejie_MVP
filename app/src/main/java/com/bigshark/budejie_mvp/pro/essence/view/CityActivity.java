@@ -24,8 +24,11 @@ import android.widget.TextView;
 
 import com.bigshark.budejie_mvp.R;
 import com.bigshark.budejie_mvp.bean.CityModel;
+import com.bigshark.budejie_mvp.mvp.presenter.impl.MvpBasePresenter;
+import com.bigshark.budejie_mvp.pro.base.view.BaseActivity;
 import com.bigshark.budejie_mvp.pro.custom_view.MyLetterListView;
 import com.bigshark.budejie_mvp.pro.essence.view.db.CityDBManager;
+import com.bigshark.budejie_mvp.pro.essence.view.navigation.EssenceActivityNavigationBuilder;
 import com.bigshark.budejie_mvp.pro.essence.view.navigation.EssenceNavigationBuilder;
 
 import java.util.ArrayList;
@@ -35,7 +38,7 @@ import java.util.List;
 /**
  * 城市选择
  */
-public class CityActivity extends Activity
+public class CityActivity extends BaseActivity
 {
 
 	private TextView city, defaultCity;
@@ -62,9 +65,15 @@ public class CityActivity extends Activity
 		Event();
 		initData();
 	}
+
+	@Override
+	public MvpBasePresenter bindPresenter() {
+		return null;
+	}
+
 	private void initToolbar() {
-		RelativeLayout contentLayout = (RelativeLayout) findViewById(R.id.content);
-		EssenceNavigationBuilder bar = new EssenceNavigationBuilder(this);
+		RelativeLayout contentLayout = (RelativeLayout) findViewById(R.id.root_layout);
+		EssenceActivityNavigationBuilder bar = new EssenceActivityNavigationBuilder(this);
 		bar.setTitle("城市").setLeftIcon(R.drawable.left_back)
 				.setLeftIconOnClickListener(new View.OnClickListener() {
 					@Override

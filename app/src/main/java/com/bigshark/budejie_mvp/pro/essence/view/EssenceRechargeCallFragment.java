@@ -8,19 +8,37 @@ import android.provider.ContactsContract;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.telecom.Call;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.alibaba.fastjson.JSONObject;
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.bigshark.budejie_mvp.BaseApplication;
 import com.bigshark.budejie_mvp.R;
 import com.bigshark.budejie_mvp.bean.CallType;
+import com.bigshark.budejie_mvp.bean.PhoneRecharge;
+import com.bigshark.budejie_mvp.http.utils.HeaderStringRequest;
+import com.bigshark.budejie_mvp.http.utils.JSONUtil;
 import com.bigshark.budejie_mvp.pro.base.view.BaseFragment;
 import com.bigshark.budejie_mvp.pro.essence.view.adapter.CallTypeAdapter;
+import com.bigshark.budejie_mvp.utils.CustomProgress;
 import com.bigshark.budejie_mvp.utils.SpaceItemDecoration;
 import com.bigshark.budejie_mvp.utils.ToastUtil;
+import com.bigshark.budejie_mvp.utils.Util;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
 
 /** 话费充值
  * Created by bigShark on 2016/10/20.
@@ -66,7 +84,12 @@ public class EssenceRechargeCallFragment extends BaseFragment {
         adapter.setOnItemClickListener(new CallTypeAdapter.ItemOnClickListener() {
             @Override
             public void onItemClick(View view, int postion) {
-                ToastUtil.showToast(getContext(),"选择支付");
+                //ToastUtil.showToast(getContext(),"");
+                if(Util.isMobileNO(phoneNum.getText().toString().trim())){
+                    recharge(phoneNum.getText().toString().trim(),typeTestData.get(postion).getPrice());
+                }else{
+                    ToastUtil.showToast(getContext(),"请输入正确的手机号码");
+                }
             }
         });
 
@@ -79,6 +102,51 @@ public class EssenceRechargeCallFragment extends BaseFragment {
                 startActivityForResult(intent, 0);
             }
         });
+
+    }
+
+    private void recharge(final String phone, final String cardNum){
+        CustomProgress.show(getContext(),"正在充值请稍后...",true,null);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                postAddHeader(phone,cardNum,onResultListener);
+            }
+        }).start();
+
+    }
+
+    private String url = "http://op.juhe.cn/ofpay/mobile/onlineorder";
+
+    public  void postAddHeader(final String phoneno,final String cardnum ,final OnResultListener onResultListener){
+
+        StringRequest postsr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String s) {
+                onResultListener.result(s);
+                CustomProgress.dismissProgess();
+            }
+        },new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+                CustomProgress.dismissProgess();
+                Log.e(TAG, "onResponse: +++" + volleyError.getLocalizedMessage() );
+                ToastUtil.showToast(getContext() ,"充值失败");
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> paramMap = new HashMap<>();
+                paramMap.put("phoneno",phoneno);
+                paramMap.put("cardnum",cardnum);
+                paramMap.put("orderid",new Date()+cardnum);
+                paramMap.put("key","APPKEY");
+                paramMap.put("sign","MD5");
+                return paramMap;
+            }
+        };
+        postsr.setTag("recharge");
+        BaseApplication.getHttpQueues().add(postsr);
 
     }
 
@@ -121,13 +189,43 @@ public class EssenceRechargeCallFragment extends BaseFragment {
         return contact;
     }
 
+   private String[] moenys = new String[] {"10","20","30","50","100","300"};
+    private String[] youhui = new String[] {"9.82","19.7","29.5","49.2","99","298"};
+
     private void initTestData() {
         typeTestData = new ArrayList<>();
-        for(int i=0;i<7; i++){
+        for(int i=0;i<6; i++){
             CallType call = new CallType();
-            call.setPrice("20");
-            call.setDiscountedPrice("19.98元");
+            call.setPrice(moenys[i]);
+            call.setDiscountedPrice(youhui[i].concat("元"));
             typeTestData.add(call);
         }
+    }
+
+    private OnResultListener onResultListener =  new OnResultListener(){
+        @Override
+        public void result(String s) {
+
+//            PhoneRecharge  phoneRecharge = JSONUtil.getObject(s,PhoneRecharge.class);
+//            if(phoneRecharge.getResult() != null){
+//                phoneRecharge.getResult();
+//            }
+            JSONObject json= JSONObject.parseObject(s);
+            JSONObject jsonBody = json.getJSONObject("result");
+            if(jsonBody.getJSONObject("game_state").toString().equals("0")){
+                ToastUtil.showToast(getContext() ,"正在充值");
+            }else if(jsonBody.getJSONObject("game_state").toString().equals("1")){
+                ToastUtil.showToast(getContext() ,"充值成功");
+            }
+            else if(jsonBody.getJSONObject("game_state").toString().equals("9")){
+                ToastUtil.showToast(getContext() ,"撤销充值");
+            }else{
+                ToastUtil.showToast(getContext() ,json.getJSONObject("reason").toString());
+            }
+        }
+    };
+
+    interface  OnResultListener{
+        void result(String s);
     }
 }

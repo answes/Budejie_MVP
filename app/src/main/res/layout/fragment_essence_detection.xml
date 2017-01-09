@@ -3,85 +3,179 @@
               android:id="@+id/ll_content"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical"
               android:background="@color/win_bg"
-             >
+              android:orientation="vertical"
+    >
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <com.android.volley.toolbox.NetworkImageView
-            android:id="@+id/iv_business_photo"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:scaleType="fitXY"/>
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:orientation="horizontal">
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_business_photo"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:src="@drawable/weixiujianche"
+                android:scaleType="fitXY"/>
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_left_12_dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:background="@android:color/white"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tv_name"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_l_8_dp"
-                    android:text="东莞市沙田车之宝汽车维修店"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"/>
+                    android:layout_marginLeft="@dimen/margin_left_12_dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/tv_introduction"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_l_8_dp"
-                    android:text="东莞市沙田车之宝汽车维修店"
-                    android:textColor="@color/chabai"
-                    />
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_l_8_dp"
+                        android:text="鑫辉机动车检测站"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"/>
 
-                <TextView
-                    android:id="@+id/tv_distance"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_l_8_dp"
-                    android:paddingBottom="@dimen/margin_left_6_dp"
-                    android:text="距离 300km"
-                    android:textColor="@color/chabai"
-                    />
+                    <TextView
+                        android:id="@+id/tv_introduction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_l_8_dp"
+                        android:text="南宁市横县"
+                        android:paddingBottom="@dimen/margin_left_6_dp"
+                        android:textColor="@color/tv_black_30"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_distance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_l_8_dp"
+
+                        android:text="距离 300km"
+                        android:visibility="gone"
+                        android:textColor="@color/tv_black_30"
+                        />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/photo_icon"
+                    android:visibility="gone"/>
+
+                <View
+                    android:layout_width="@dimen/line_dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/chabai"/>
+
+                <ImageView
+                    android:id="@+id/iv_map"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/lbs_icon"/>
             </LinearLayout>
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/photo_icon"
-                android:visibility="gone"/>
 
-            <View
-                android:layout_width="@dimen/line_dp"
-                android:layout_height="match_parent"
-                android:background="@color/chabai"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_left_12_dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="维修检测包括："
+                    android:textColor="@color/tv_black_90"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:paddingLeft="@dimen/margin_left_12_dp"
+                    android:text="1、发动机检测"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:paddingLeft="@dimen/margin_left_12_dp"
+                    android:text="2、整车检测"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:paddingLeft="@dimen/margin_left_12_dp"
+                    android:text="3、底盘及车身检测"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:paddingLeft="@dimen/margin_left_12_dp"
+                    android:text="4、异响、磨损、变形、裂纹"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:paddingLeft="@dimen/margin_left_12_dp"
+                    android:text="5、侧滑、转向、制动、前照灯"/>
+
+            </LinearLayout>
+
+
+            <include
+                layout="@layout/fragment_essence_detection_pay"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="8dp"
+                android:layout_marginTop="@dimen/margin_l_8_dp"
+                android:text="鑫辉机动车检测站"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="8dp"
+                android:text="@string/app_details"
+                android:textColor="@color/tv_black_50"
+                />
+            <ImageView
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_height="200dp"
+                android:src="@drawable/weixiujianche2"/>
 
             <ImageView
-                android:id="@+id/iv_map"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/lbs_icon"/>
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_height="248dp"
+                android:paddingBottom="40dp"
+                android:paddingTop="8dp"
+                android:src="@drawable/weixiujianche1"/>
+
         </LinearLayout>
-
-        <include
-            layout="@layout/fragment_essence_detection_pay"/>
-
-    </LinearLayout>
+    </ScrollView>
 </LinearLayout>

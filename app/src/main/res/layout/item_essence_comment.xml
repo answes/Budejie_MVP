@@ -5,6 +5,7 @@
               android:background="@android:color/white"
               android:paddingRight="@dimen/margin_left_12_dp"
               android:paddingLeft="@dimen/margin_left_12_dp"
+              android:visibility="gone"
               android:layout_height="wrap_content">
     <RelativeLayout
         android:layout_width="match_parent"

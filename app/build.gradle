@@ -4,7 +4,7 @@ apply plugin: 'android-apt'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
-
+    useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId "com.bigshark.budejie_mvp"
         minSdkVersion 15
@@ -37,4 +37,7 @@ dependencies {
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
     compile 'me.zhanghai.android.materialratingbar:library:1.0.2'
     compile 'com.jude:easyrecyclerview:4.2.3'
+    compile files('libs/commons-lang3-3.1.jar')
+    compile files('libs/fastjson-1.1.40.jar')
+    compile 'com.pitt.fresh.library:freshdownloadview:1.0'
 }

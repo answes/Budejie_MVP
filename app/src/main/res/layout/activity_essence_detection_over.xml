@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.bigshark.budejie_mvp.pro.essence.view.EssenceDetectionOverActivity">
+
+    <com.pitt.library.fresh.FreshDownloadView
+        android:id="@+id/pitt"
+        android:layout_width="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="20dp"
+        app:circular_progress_color="@color/aqua"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="@dimen/text_size_18_sp"
+        android:visibility="gone"
+        android:text="您已预约，前面有0人等待"/>
+
+</LinearLayout>

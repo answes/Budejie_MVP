@@ -12,7 +12,9 @@ import com.android.volley.toolbox.NetworkImageView;
 import com.bigshark.budejie_mvp.R;
 import com.bigshark.budejie_mvp.mvp.presenter.impl.MvpBasePresenter;
 import com.bigshark.budejie_mvp.pro.base.view.BaseActivity;
+import com.bigshark.budejie_mvp.pro.essence.view.navigation.EssenceActivityNavigationBuilder;
 import com.bigshark.budejie_mvp.pro.essence.view.navigation.EssenceNavigationBuilder;
+import com.bigshark.budejie_mvp.utils.ToastUtil;
 import com.bigshark.budejie_mvp.utils.VolleyUtils;
 
 /**
@@ -30,6 +32,9 @@ public class EssenceBusinessActivity extends BaseActivity {
     private ImageView map;
 
     private String title;
+    private String url;
+    private String sencendName;
+    private String distances;
 
     @Override
     public MvpBasePresenter bindPresenter() {
@@ -47,8 +52,11 @@ public class EssenceBusinessActivity extends BaseActivity {
 
     private void initToolbar() {
         LinearLayout contentLayout = (LinearLayout) findViewById(R.id.ll_content);
-        EssenceNavigationBuilder bar = new EssenceNavigationBuilder(this);
+        EssenceActivityNavigationBuilder bar = new EssenceActivityNavigationBuilder(this);
         if(getIntent() != null){
+            url = getIntent().getStringExtra("url");
+            sencendName = getIntent().getStringExtra("sencendName");
+            distances = getIntent().getStringExtra("distances");
             bar.setTitle(getIntent().getStringExtra("title")).setLeftIcon(R.drawable.left_back)
                     .setLeftIconOnClickListener(new View.OnClickListener() {
                         @Override
@@ -69,8 +77,10 @@ public class EssenceBusinessActivity extends BaseActivity {
     }
 
     private void initData() {
-        VolleyUtils.loadImage(this,logoBusiness,"http://www.gsby56.com/uploadfile/20130830165317580.jpg");
-
+        VolleyUtils.loadImage(this,logoBusiness,url);
+        businessName.setText(title);
+        introduction.setText(sencendName);
+        distance.setText("距离"+distances);
     }
 
     private void findAndBindView() {
@@ -86,9 +96,12 @@ public class EssenceBusinessActivity extends BaseActivity {
         Intent intent = new Intent(activity, EssenceBusinessActivity.class);
         activity.startActivity(intent);
     }
-    public static void openEssenceBusinessActivity(Activity activity,String title) {
+    public static void openEssenceBusinessActivity(Activity activity, String title, String url, String sencendName, String distances) {
         Intent intent = new Intent(activity, EssenceBusinessActivity.class);
         intent.putExtra("title",title);
+        intent.putExtra("url",url);
+        intent.putExtra("sencendName",sencendName);
+        intent.putExtra("distances",distances);
         activity.startActivity(intent);
     }
 }

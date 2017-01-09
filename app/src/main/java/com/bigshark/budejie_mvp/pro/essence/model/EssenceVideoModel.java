@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import com.bigshark.budejie_mvp.http.impl.HttpCommand;
 import com.bigshark.budejie_mvp.http.impl.RequestParam;
 import com.bigshark.budejie_mvp.http.utils.HttpTask;
-import com.bigshark.budejie_mvp.http.utils.HttpUtils;
+import com.bigshark.budejie_mvp.http.utils.MyHttpUtils;
 import com.bigshark.budejie_mvp.pro.base.model.BaseModel;
 
 /**
@@ -32,7 +32,7 @@ public class EssenceVideoModel extends BaseModel {
      * @param maxtime              -- 加载更多的时候需要传入此字段
      * @param onHttpResultListener -- 返回数据回调监听
      */
-    public void getEssenceLsit(int type, int page, String maxtime, HttpUtils.OnHttpResultListener onHttpResultListener) {
+    public void getEssenceLsit(int type, int page, String maxtime, MyHttpUtils.OnHttpResultListener onHttpResultListener) {
         RequestParam requestParam = new RequestParam();
         requestParam.put("a", "list");
         requestParam.put("c", "data");

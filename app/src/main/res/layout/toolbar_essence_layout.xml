@@ -15,15 +15,34 @@
             android:id="@+id/iv_left"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginLeft="@dimen/margin_left_12_dp"/>
+            android:src="@drawable/lbs_icon"
+            android:layout_marginLeft="8dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="横县"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_weight="2"
+        android:layout_weight="3"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/fragment_essence_toolbar_search_bg"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/fragment_essence_toolbar_search"
+            android:layout_marginLeft="8dp"/>
+        <TextView
+            android:id="@+id/iv_searchtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tv_black_30"/>
         <TextView
             android:id="@+id/iv_title"
             android:layout_width="wrap_content"
@@ -42,7 +61,6 @@
             android:id="@+id/iv_right"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/main_essence_btn_more_selector"
             android:layout_marginRight="@dimen/margin_left_12_dp"/>
     </LinearLayout>
 

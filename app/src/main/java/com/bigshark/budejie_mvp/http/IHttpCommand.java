@@ -6,4 +6,5 @@ package com.bigshark.budejie_mvp.http;
  */
 public interface IHttpCommand<T> {
     String execute(String url, IRequestParam<T> requestParam);
+    //String execute();
 }

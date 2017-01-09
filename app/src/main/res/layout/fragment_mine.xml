@@ -3,6 +3,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:background="@color/white"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical">
 
     <ScrollView
@@ -17,7 +18,91 @@
             <include layout="@layout/fragment_mine_heand"/>
 
             <include layout="@layout/fragment_mine_card"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_dp"
+                android:layout_marginTop="@dimen/margin_left_12_dp"
+                android:background="@color/chabai"/>
+            <com.allen.supertextviewlibrary.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/stv_mine"
+                app:sLeftIconRes="@drawable/mine_user"
+                app:sLineShow="none"
+                app:sRightIconRes="@drawable/more_icon"
+                app:sLeftTextString="@string/mine_mine"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_dp"
+                android:background="@color/chabai"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_dp"
+                android:layout_marginTop="@dimen/margin_left_12_dp"
+                android:background="@color/chabai"/>
+            <com.allen.supertextviewlibrary.SuperTextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:id="@+id/stv_order"
+            app:sLeftIconRes="@drawable/mine_order"
+            app:sLineShow="none"
+            app:sRightIconRes="@drawable/more_icon"
+            app:sLeftTextString="@string/mine_oreder"
+            />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_dp"
+                android:background="@color/chabai"/>
+            <com.allen.supertextviewlibrary.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/stv_collection"
+                app:sLeftIconRes="@drawable/mine_star"
+                app:sLineShow="none"
+                app:sRightIconRes="@drawable/more_icon"
+                app:sLeftTextString="@string/mine_collection"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_dp"
+                android:background="@color/chabai"/>
+            <com.allen.supertextviewlibrary.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/stv_detection"
+                app:sLeftIconRes="@drawable/mine_star"
+                app:sLineShow="none"
+                app:sRightIconRes="@drawable/more_icon"
+                app:sLeftTextString="@string/mine_detection"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_dp"
+                android:background="@color/chabai"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_dp"
+                android:layout_marginTop="@dimen/margin_left_12_dp"
+                android:background="@color/chabai"/>
+            <com.allen.supertextviewlibrary.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/stv_set"
+                app:sLeftIconRes="@drawable/mine_set"
+                app:sLineShow="none"
+                app:sRightIconRes="@drawable/more_icon"
+                app:sLeftTextString="@string/mine_set"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_dp"
+                android:background="@color/chabai"/>
+
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>

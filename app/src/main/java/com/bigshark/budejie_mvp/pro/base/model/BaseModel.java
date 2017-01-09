@@ -18,4 +18,10 @@ public abstract class BaseModel implements IMvpModel {
     public String getServerUrl() {
         return "http://api.budejie.com";
     }
+    public String getIllegalUrl() {
+        return "http://ali-carlaw.showapi.com";
+    }
+    public String getCallUrl() {
+        return "http://op.juhe.cn/ofpay/mobile/onlineorder";
+    }
 }

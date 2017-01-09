@@ -40,13 +40,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@color/check_bg"
-                    android:textColor="@android:color/white"
+                    android:gravity="center"
+                    android:textColor="@color/white"
                     android:text=" 桂A "/>
 
                 <EditText
                     android:id="@+id/et_catNum"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="@dimen/margin_left_6_dp"
                     android:background="@android:color/transparent"/>
             </LinearLayout>
@@ -60,7 +61,7 @@
             <EditText
                 android:id="@+id/et_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:background="@drawable/essence_white_bg"
                 android:layout_margin="@dimen/margin_left_12_dp"
                />
@@ -74,7 +75,7 @@
             <EditText
                 android:id="@+id/et_id"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_margin="@dimen/margin_left_12_dp"
                 android:background="@drawable/essence_white_bg"/>
 
@@ -87,7 +88,7 @@
             <EditText
                 android:id="@+id/et_phoneNum"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_margin="@dimen/margin_left_12_dp"
                 android:background="@drawable/essence_white_bg"/>
 
@@ -106,7 +107,7 @@
                 <EditText
                     android:id="@+id/et_dynamicCode"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:layout_marginRight="@dimen/margin_left_12_dp"
                     android:layout_weight="1"
                     android:background="@drawable/essence_white_bg"/>
@@ -179,7 +180,7 @@
                 <Button
                     android:id="@+id/bt_callPhone"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="35dp"
                     android:layout_margin="16dp"
                     android:layout_weight="1"
                     android:background="@drawable/essence_check_true_bg"
@@ -190,7 +191,7 @@
                 <Button
                     android:id="@+id/bt_takePhtoto"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="35dp"
                     android:layout_margin="16dp"
                     android:layout_weight="1"
                     android:background="@drawable/essence_check_true_bg"

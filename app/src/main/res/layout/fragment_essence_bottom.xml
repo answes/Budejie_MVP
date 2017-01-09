@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:background="@color/white"
+              android:layout_marginTop="8dp"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:paddingBottom="@dimen/margin_left_25_dp"
+              android:layout_height="match_parent">
+    <com.allen.supertextviewlibrary.SuperTextView
+        android:layout_width="match_parent"
+        app:sLeftTopTextString="新用户专享"
+        app:sLeftTopTextSize="@dimen/text_size_16_sp"
+        app:sLeftBottomTextSize="@dimen/text_size_14_sp"
+        app:sLeftBottomTextString="1块钱购车，最高立减10000元"
+        app:sLeftBottomTextColor="@color/tv_black_50"
+        app:sLineShow="none"
+        app:sRightIconRes="@drawable/youhui"
+        android:layout_height="70dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_detection"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/app_name"
+                android:padding="4dp"
+                android:src="@drawable/lunta"
+                android:id="@+id/imageView"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="@dimen/margin_left_6_dp"
+                android:text="免费检测"
+                android:textColor="@color/tv_black_90"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="@dimen/margin_left_6_dp"
+                android:text="检测汽车故障"
+                android:textSize="@dimen/text_size_12_sp"
+                android:textColor="@color/tv_black_50"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_insurance"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:padding="4dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/xiche"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="@dimen/margin_left_6_dp"
+                android:text="免费洗车"
+                android:textColor="@color/tv_black_90"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="@dimen/margin_left_6_dp"
+                android:text="为汽车美白"
+                android:textSize="@dimen/text_size_12_sp"
+                android:textColor="@color/tv_black_50"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_illegal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:padding="4dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/xiuxian"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="@dimen/margin_left_6_dp"
+                android:text="度假神器"
+                android:textColor="@color/tv_black_90"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="@dimen/margin_left_6_dp"
+                android:text="规划旅游路线"
+                android:textSize="@dimen/text_size_12_sp"
+                android:textColor="@color/tv_black_50"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

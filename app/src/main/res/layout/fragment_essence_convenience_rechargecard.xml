@@ -40,7 +40,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp">
+            android:layout_height="40dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/margin_l_8_dp"
-                android:background="@android:color/white"
+                android:background="@android:color/transparent"
                 android:layout_gravity="center_vertical"
                 android:singleLine="true"
                 android:hint="请输入持卡人姓名"/>
@@ -71,9 +71,11 @@
 
 
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_height="40dp">
 
             <TextView
                 android:id="@+id/tv_city1"
@@ -82,6 +84,21 @@
                 android:layout_centerVertical="true"
                 android:text="油卡卡号"
                 android:textColor="@android:color/black"/>
+            <EditText
+                android:id="@+id/et_cardNum"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:numeric="integer"
+                android:layout_marginLeft="8dp"
+                android:background="@android:color/transparent"
+                android:singleLine="true"
+                android:hint="请输入完整的油卡卡号"
+                android:layout_centerVertical="true"
+                android:textColor="@color/check_bg"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tv_city1"
+                android:layout_toEndOf="@+id/tv_city1"/>
 
             <ImageView
                 android:id="@+id/iv_help"
@@ -92,29 +109,14 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/margin_left_12_dp"
                 android:src="@drawable/help_icon"/>
-
-            <EditText
-                android:id="@+id/et_cardNum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:numeric="integer"
-                android:layout_marginLeft="@dimen/margin_left_5_dp"
-
-                android:singleLine="true"
-                android:hint="请输入完整的油卡卡号"
-                android:layout_centerVertical="true"
-                android:textColor="@color/check_bg"
-                android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/tv_city1"
-                android:layout_toEndOf="@+id/tv_city1"/>
-        </RelativeLayout>
+        </LinearLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/line_dp"
             android:background="@color/check_false_bg"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp">
+            android:layout_height="40dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -129,8 +131,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:background="@android:color/white"
-                android:layout_marginLeft="@dimen/margin_l_8_dp"
+                android:layout_marginLeft="5dp"
                 android:singleLine="true"
                 android:inputType="number"
                 android:hint="请输入您要充值的金额"

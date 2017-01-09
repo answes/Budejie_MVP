@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
@@ -20,6 +21,7 @@ import com.android.volley.toolbox.Volley;
 import com.bigshark.budejie_mvp.R;
 import com.bigshark.budejie_mvp.mvp.presenter.impl.MvpBasePresenter;
 import com.bigshark.budejie_mvp.pro.base.view.BaseActivity;
+import com.bigshark.budejie_mvp.pro.essence.view.navigation.EssenceActivityNavigationBuilder;
 import com.bigshark.budejie_mvp.pro.essence.view.navigation.EssenceNavigationBuilder;
 import com.bigshark.budejie_mvp.pro.essence.view.views.DetectionFirstTipsDialog;
 import com.bigshark.budejie_mvp.utils.BitmapCache;
@@ -37,7 +39,7 @@ import java.net.URISyntaxException;
 public class EssenceDetectionActivity extends BaseActivity implements View.OnClickListener {
     private SharedPreferences preferences;
 
-    private NetworkImageView businessPhoto;
+   // private NetworkImageView businessPhoto;
     private TextView businessName;
     private TextView businessItdction;
     private TextView businessDistance;
@@ -61,7 +63,7 @@ public class EssenceDetectionActivity extends BaseActivity implements View.OnCli
 
     private void initToolbar() {
         LinearLayout contentLayout = (LinearLayout) findViewById(R.id.ll_content);
-        EssenceNavigationBuilder bar = new EssenceNavigationBuilder(this);
+        EssenceActivityNavigationBuilder bar = new EssenceActivityNavigationBuilder(this);
         bar.setTitle("汽车检测站").setLeftIcon(R.drawable.left_back)
                 .setLeftIconOnClickListener(new View.OnClickListener() {
                     @Override
@@ -73,7 +75,7 @@ public class EssenceDetectionActivity extends BaseActivity implements View.OnCli
     }
 
     private void findOnBindView() {
-        businessPhoto = (NetworkImageView) findViewById(R.id.iv_business_photo);
+       // businessPhoto = (NetworkImageView) findViewById(R.id.iv_business_photo);
         businessName = (TextView) findViewById(R.id.tv_name);
         businessItdction = (TextView) findViewById(R.id.tv_introduction);
         map = (ImageView) findViewById(R.id.iv_map);
@@ -90,7 +92,7 @@ public class EssenceDetectionActivity extends BaseActivity implements View.OnCli
         reservationBt.setOnClickListener(this);
         map.setOnClickListener(this);
 
-        VolleyUtils.loadImage(this, businessPhoto, "http://1.img.home77.com/G1/M00/18/56/dB9kMVPYSBmATYrUAAbDn2CAKPE213.jpg");
+      //  VolleyUtils.loadImage(this, businessPhoto, "http://1.img.home77.com/G1/M00/18/56/dB9kMVPYSBmATYrUAAbDn2CAKPE213.jpg");
 
     }
 
@@ -99,27 +101,33 @@ public class EssenceDetectionActivity extends BaseActivity implements View.OnCli
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bt_pay:
-                if (checkPay) {
-
-                }
                 break;
             case R.id.bt_reservation:
-                if (!checkPay) {
+                if(checkPay) {
+//                    new MaterialDialog.Builder(EssenceDetectionActivity.this)
+//                            .content("预约成功")
+//                            .positiveText("确定")
+//                            .show();
+                    EssenceDetectionOverActivity.openEssenceDetectionOverActivity(this);
+                    reservationBt.setText("您已预约，前面有0人等待");
+                    checkPay= false;
+                }else{
+                    ToastUtil.showToast(this,"您已经预约成功");
                 }
                 break;
             case R.id.iv_pay:
-                clearCheck();
-                checkPay = true;
-                payIv.setImageResource(R.drawable.check_true);
-                payBt.setBackgroundResource(R.drawable.essence_check_true_bg);
+//                clearCheck();
+//                checkPay = true;
+//                payIv.setImageResource(R.drawable.check_true);
+//                payBt.setBackgroundResource(R.drawable.essence_check_true_bg);
                 break;
             case R.id.iv_reservation:   //选择到店支付
-                clearCheck();
-                reservationIv.setImageResource(R.drawable.check_true);
-                reservationBt.setBackgroundResource(R.drawable.essence_check_true_bg);
+//                clearCheck();
+//                reservationIv.setImageResource(R.drawable.check_true);
+//                reservationBt.setBackgroundResource(R.drawable.essence_check_true_bg);
                 break;
             case R.id.iv_map:   //启动地图
-                ToastUtil.showToast(this, "跳转地图进行导航");
+                //ToastUtil.showToast(this, "跳转地图进行导航");
 //            if(MapUtils.isAvilible(this,"com.baidu.BaiduMap")){//传入指定应用包名
 //                try {
 ////                          intent = Intent.getIntent("intent://map/direction?origin=latlng:34.264642646862,108.95108518068|name:我家&destination=大雁塔&mode=driving®ion=西安&src=yourCompanyName|yourAppName#Intent;scheme=bdapp;package=com.baidu.BaiduMap;end");

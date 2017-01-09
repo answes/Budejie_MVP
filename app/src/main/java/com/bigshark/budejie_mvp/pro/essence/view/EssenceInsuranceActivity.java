@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.bigshark.budejie_mvp.R;
 import com.bigshark.budejie_mvp.mvp.presenter.impl.MvpBasePresenter;
 import com.bigshark.budejie_mvp.pro.base.view.BaseActivity;
+import com.bigshark.budejie_mvp.pro.essence.view.navigation.EssenceActivityNavigationBuilder;
 import com.bigshark.budejie_mvp.pro.essence.view.navigation.EssenceNavigationBuilder;
 import com.bigshark.budejie_mvp.pro.essence.view.views.EssenceInsuranceNextActivity;
 import com.bigshark.budejie_mvp.utils.ToastUtil;
@@ -74,7 +75,7 @@ public class EssenceInsuranceActivity extends BaseActivity {
 
     private void initToolbar() {
         LinearLayout contentLayout = (LinearLayout) findViewById(R.id.ll_content);
-        EssenceNavigationBuilder bar = new EssenceNavigationBuilder(this);
+        EssenceActivityNavigationBuilder bar = new EssenceActivityNavigationBuilder(this);
         bar.setTitle("基本信息").setLeftIcon(R.drawable.left_back)
                 .setLeftIconOnClickListener(new View.OnClickListener() {
                     @Override

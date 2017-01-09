@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-    <com.android.volley.toolbox.NetworkImageView
+    <com.bigshark.budejie_mvp.pro.custom_view.XCRoundRectImageView
         android:id="@+id/iv_header"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -12,6 +13,8 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="@dimen/margin_left_12_dp"
         android:scaleType="fitXY"
+        app:shape_mode="round_rect"
+        app:round_radius="4dp"
         android:src="@drawable/main_bottom_attention_normal" />
 
     <RelativeLayout

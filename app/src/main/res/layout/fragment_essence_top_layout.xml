@@ -4,8 +4,9 @@
               android:id="@+id/id_stickynavlayout_topview"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-             android:paddingBottom="@dimen/margin_left_6_dp"
-              android:orientation="vertical">
+              android:background="@color/white"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/margin_left_6_dp">
 
     <com.youth.banner.Banner
         android:id="@+id/id_banner"
@@ -13,11 +14,16 @@
         android:layout_height="160dp"
         app:image_scale_type="fit_xy"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/chabai"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/margin_l_8_dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/margin_l_8_dp">
 
         <LinearLayout
             android:id="@+id/ll_detection"
@@ -27,12 +33,15 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/imageView"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center"
+                android:padding="10dp"
                 android:contentDescription="@string/app_name"
-                android:src="@mipmap/fragment_essence_detection"
-                android:id="@+id/imageView"/>
+                android:src="@drawable/jiance"
+                />
+            <!--android:src="@mipmap/fragment_essence_detection"-->
 
             <TextView
                 android:layout_width="match_parent"
@@ -41,7 +50,7 @@
                 android:paddingBottom="@dimen/margin_left_6_dp"
                 android:text="汽车检测"
                 android:textColor="@color/tv_black_90"
-               />
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -52,11 +61,13 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center"
+                android:padding="3dp"
                 android:contentDescription="@string/app_name"
-                android:src="@mipmap/fragment_essence_insurance"/>
+                android:src="@drawable/baoxian"/>
+            <!--android:src="@mipmap/fragment_essence_insurance"-->
 
             <TextView
                 android:layout_width="match_parent"
@@ -75,11 +86,14 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:contentDescription="@string/app_name"
-                android:src="@mipmap/fragment_essence_illegal"/>
+                android:src="@drawable/weizhang"
+                android:padding="8dp"
+                android:id="@+id/imageView2"/>
+            <!-- android:src="@mipmap/fragment_essence_illegal"-->
 
             <TextView
                 android:layout_width="match_parent"
@@ -88,63 +102,8 @@
                 android:paddingBottom="@dimen/margin_left_6_dp"
                 android:text="违章查询"
                 android:textColor="@color/tv_black_90"
-               />
+                />
         </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:id="@+id/ll_service"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:contentDescription="@string/app_name"
-                android:src="@mipmap/fragment_essence_service"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingBottom="@dimen/margin_left_6_dp"
-                android:text="维修检测"
-                android:textColor="@color/tv_black_90"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_beauty"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:contentDescription="@string/app_name"
-                android:src="@mipmap/fragment_essence_beauty"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingBottom="@dimen/margin_left_6_dp"
-                android:text="汽车美容"
-                android:textColor="@color/tv_black_90"/>
-        </LinearLayout>
-
-
 
         <LinearLayout
             android:id="@+id/ll_convenience"
@@ -154,11 +113,13 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center"
+                android:padding="8dp"
                 android:contentDescription="@string/app_name"
-                android:src="@mipmap/fragment_essence_convenience"/>
+                android:src="@drawable/chongzhi"/>
+            <!-- android:src="@mipmap/fragment_essence_convenience"-->
 
             <TextView
                 android:layout_width="match_parent"
@@ -169,7 +130,127 @@
                 android:textColor="@color/tv_black_90"/>
         </LinearLayout>
 
+    </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/chabai"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <com.allen.supertextviewlibrary.SuperTextView
+            android:id="@+id/ll_service"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            app:sLeftTopTextColor="@color/red"
+            android:layout_weight="1"
+            app:sLeftBottomTextColor="@color/tv_black_50"
+            app:sLeftBottomTextSize="@dimen/text_size_14_sp"
+            app:sLeftBottomTextString="对汽车进行维修检查故障"
+            app:sLeftTopTextSize="@dimen/text_size_18_sp"
+            app:sLeftTopTextString="维修检测"
+            app:sLineShow="none"
+          />
+
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/chabai"/>
+
+        <com.allen.supertextviewlibrary.SuperTextView
+            android:id="@+id/ll_beauty"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            app:sLeftBottomTextColor="@color/tv_black_50"
+            app:sLeftTopTextColor="@color/check_bg"
+            app:sLeftBottomTextSize="@dimen/text_size_14_sp"
+            app:sLeftBottomTextString="美白汽车洗尘"
+            app:sLeftTopTextSize="@dimen/text_size_18_sp"
+            app:sLeftTopTextString="汽车美容"
+            app:sLineShow="none"
+            app:sRightIconRes="@drawable/qichemeirong"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/chabai"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <com.allen.supertextviewlibrary.SuperTextView
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            app:sLeftBottomTextColor="@color/tv_black_50"
+            app:sLeftBottomTextSize="@dimen/text_size_14_sp"
+            app:sLeftBottomTextString="历史最低价"
+            app:sLeftTopTextColor="@color/red"
+            app:sLeftTopTextSize="@dimen/text_size_16_sp"
+            app:sLeftTopTextString="1024元"
+            app:sLineShow="none"
+            app:sRightIconRes="@drawable/beibao"
+           />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/chabai"/>
+
+        <com.allen.supertextviewlibrary.SuperTextView
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            app:sLeftBottomTextColor="@color/tv_black_50"
+            app:sLeftBottomTextSize="@dimen/text_size_14_sp"
+            app:sLeftBottomTextString="美白汽车洗尘"
+            app:sLeftTopTextSize="@dimen/text_size_16_sp"
+            app:sLeftTopTextString="送高铁贵宾票"
+            app:sRightIconRes="@drawable/gaotie"
+            app:sLineShow="none"
+           />
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/win_bg"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:weightSum="1">
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:src="@drawable/redian"
+            android:layout_weight="0.07"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/chabai"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/main_bottom_text_select"
+            android:singleLine="true"
+            android:text="盘点近年来那些令人惊讶的中国汽车"/>
     </LinearLayout>
 
 

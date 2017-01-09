@@ -65,7 +65,7 @@ public class MyOrderActivity extends BaseActivity implements RecyclerArrayAdapte
 
     private void initRecyclerView() {
         ervContent.setLayoutManager(new LinearLayoutManager(this));
-        ervContent.addItemDecoration(new  HorizontalDividerItemDecoration.Builder(this).colorResId(R.color.win_bg).size(12).build());
+        ervContent.addItemDecoration(new  HorizontalDividerItemDecoration.Builder(this).colorResId(R.color.win_bg).size(25).build());
 
         ervContent.setAdapterWithProgress( adapter = new RecyclerArrayAdapter(this) {
             @Override
